@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    p "===================="
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
@@ -16,5 +15,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    if session[:user_id]
+      session[:user_id] = nil
+      flash.notice = "ログアウトしました"
+      redirect_to login_form_path
+    end
   end
 end
