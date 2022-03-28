@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post 'users/create', to:  'users#create'
 
   get 'posts/new',   to:  'posts#new',  as: 'post_new'
+  post 'posts/create',  to: 'posts#create',  as:  'post_create'
 end
