@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get  'users/new',    to:  'users#new'
   get  'users/index',  to:  'users#index'
   post 'users/create', to:  'users#create'
+
+  get 'posts/new',   to:  'posts#new',  as: 'post_new'
 end

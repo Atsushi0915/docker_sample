@@ -16,7 +16,7 @@
 
   <body>
     <header>
-      <%= render 'layouts/navbar'  %>
+      <%= render 'layouts/navbar', current_user: @current_user %>
     </header>
     <main>
       <%= render 'layouts/message' %>

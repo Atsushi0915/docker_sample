@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :authenticate_user, {only:[:index, :show, :edit]}  #ログインが必要
+  before_action :forbid_login_user, {only:[:new, :create]}  #ログアウトが必要
+
   def index
     @user = User.all
   end
