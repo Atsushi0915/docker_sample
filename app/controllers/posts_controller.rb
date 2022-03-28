@@ -16,10 +16,10 @@ class PostsController < ApplicationController
       flash.notice = "投稿失敗しました"
       render post_new_path
     end
-
   end
 
   def index
+    @post = Post.all
   end
 
   def show
