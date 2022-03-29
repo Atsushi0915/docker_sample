@@ -9,8 +9,8 @@
       <tbody>
         <% @post.each do |post| %>
           <%= tag.tr %>          
-            <%= tag.td post.title %>
-            <%= tag.td post.content %>
+            <%= tag.td link_to(post.title, post_show_path(post.user.id)) %>
+            <%= tag.td link_to(post.content, post_show_path(post.user.id)) %>
         <%end%>
       </tbody>
     </table>

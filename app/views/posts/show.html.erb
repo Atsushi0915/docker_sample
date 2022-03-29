@@ -1,2 +1,5 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <%= tag.h1 "#{@post.user.name}の投稿" %>
+  <%= tag.p "タイトル：  #{@post.title}" %>
+  <%= tag.p "投稿内容：  #{@post.content}" %>
+</div>
