@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   get  'users/index',  to:  'users#index'
   post 'users/create', to:  'users#create'
 
-  get  'posts/new',      to: 'posts#new',     as:  'post_new'
-  post 'posts/create',   to: 'posts#create',  as:  'post_create'
-  get  'posts/index',    to: 'posts#index',   as:  'posts_index'
-  get  'posts/:id/show', to: 'posts#show',    as:  'post_show'
+  get  'posts/new',         to: 'posts#new',     as:  'post_new'
+  post 'posts/create',      to: 'posts#create',  as:  'post_create'
+  get  'posts/index',       to: 'posts#index',   as:  'posts_index'
+  get  'posts/:id/show',    to: 'posts#show',    as:  'post_show'
+  get  'posts/:id/edit',    to: 'posts#edit',    as:  'post_edit'
+  patch 'posts/:id/update',  to: 'posts#update',  as:  'post_update'
 end

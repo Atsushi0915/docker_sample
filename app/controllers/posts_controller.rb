@@ -18,15 +18,28 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    post = Post.find_by(id: params[:id])
+
+    if post.update(post_params)
+      flash.notice = "更新しました。"
+      redirect_to posts_index_path
+    else
+      flash.notice = "更新失敗しました"
+      redirect_to post_edit_path(post.id)
+    end
+  end
+
   def index
     @post = Post.all
   end
 
   def show
-    @post = Post.find_by(user_id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
   def edit
+    @post = Post.find_by(id: params[:id])
   end
 
   private
