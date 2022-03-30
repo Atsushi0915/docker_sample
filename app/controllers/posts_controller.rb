@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user, {only:[:new, :create, :update, :destroy, :index, :show, :edit]}  #ログインが必要
+  before_action :forbid_login_user, {only:[:new, :create]}  #ログアウトが必要
+
   def top
   end
 
