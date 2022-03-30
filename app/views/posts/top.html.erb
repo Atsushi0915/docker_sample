@@ -1,5 +1,14 @@
 <div class="container mt-4">
     <h1>Dockerでサンプルアプリ</h1>
-    <p>ユーザー登録から投稿まで</p>
-    <%= tag.p "現在のログインユーザー   =>   #{@current_user.name}  /  #{@current_user.email}  /  ユーザーid: #{@current_user.id}" %>
+    <ul>
+      <li>サンイン機能</li>
+      <li>ログイン機能</li>
+      <li>ユーザー登録機能</li>
+      <li>新規投稿機能</li>
+      <li>投稿編集機能</li>
+      <li>投稿削除機能</li>
+    </ul>
+    <% if @current_user%>
+      <%= tag.p "現在のログインユーザー   =>   #{@current_user.name}  /  #{@current_user.email}  /  ユーザーid: #{@current_user.id}" %>
+    <% end %>
 </div>
